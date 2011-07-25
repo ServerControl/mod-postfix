@@ -1,0 +1,4 @@
+servercontrol-mod-postfix (0.93) unstable; urgency=low
+  * initial package
+ -- Sascha Guenther <sg@gitco.de>  Wed, 22 Jul 2011 11:00:00 +0200
+

@@ -1,0 +1,189 @@
+Directories:
+   Base:
+      bin:
+         name: bin
+         chmod: 755
+         user: root
+         group: root
+      spool:
+         name: var/spool
+         chmod: 755
+         user: root
+         group: root
+      lib:
+         name: lib
+         chmod: 755
+         user: root
+         group: root
+   Configuration:
+      conf:
+         name: etc
+         chmod: 755
+         user: root
+         group: root
+   Runtime:
+      pid:
+         name: var/run
+         chmod: 755
+         user: <%= ServerControl::Args->get->{'user'} %>
+         group: <%= ServerControl::Args->get->{'group'} %>
+      log:
+         name: var/log
+         chmod: 755
+         user: <%= ServerControl::Args->get->{'user'} %>
+         group: <%= ServerControl::Args->get->{'group'} %>
+Files:
+   Exec:
+      postfix:
+         name: bin/postfix-<%= __PACKAGE__->get_name %>
+         link: /opt/sc/opt/postfix/2.7.1/sbin/postfix
+      postfix-script:
+         name: bin/postfix-script
+         link: /opt/sc/opt/postfix/2.7.1/etc/postfix-script
+      post-install:
+         name: bin/post-install
+         link: /opt/sc/opt/postfix/2.7.1/etc/post-install
+      postfix-files:
+         name: bin/postfix-files
+         link: /opt/sc/opt/postfix/2.7.1/etc/postfix-files
+      maillog:
+         name: bin/maillog
+         link: /var/log/mail.log
+      tcp.so:
+         name: lib/tcp.so
+         link: /opt/sc/opt/postfix/2.7.1/lib/dict
+      mysql.so:
+         name: lib/mysql.so
+         link: /opt/sc/opt/postfix/2.7.1/lib/dict
+      anvil:
+         name: bin/anvil
+         link: /opt/sc/opt/postfix/2.7.1/lib/anvil
+      bounce:
+         name: bin/bounce
+         link: /opt/sc/opt/postfix/2.7.1/lib/bounce
+      cleanup:
+         name: bin/cleanup
+         link: /opt/sc/opt/postfix/2.7.1/lib/cleanup
+      discard:
+         name: bin/discard
+         link: /opt/sc/opt/postfix/2.7.1/lib/discard
+      error:
+         name: bin/error
+         link: /opt/sc/opt/postfix/2.7.1/lib/error
+      flush:
+         name: bin/flush
+         link: /opt/sc/opt/postfix/2.7.1/lib/flush
+      lmtp:
+         name: bin/lmtp
+         link: /opt/sc/opt/postfix/2.7.1/lib/lmtp
+      local:
+         name: bin/local
+         link: /opt/sc/opt/postfix/2.7.1/lib/local
+      master:
+         name: bin/master
+         link: /opt/sc/opt/postfix/2.7.1/lib/master
+      oqmgr:
+         name: bin/oqmgr
+         link: /opt/sc/opt/postfix/2.7.1/lib/oqmgr
+      pickup:
+         name: bin/pickup
+         link: /opt/sc/opt/postfix/2.7.1/lib/pickup
+      pipe:
+         name: bin/pipe
+         link: /opt/sc/opt/postfix/2.7.1/lib/pipe
+      proxymap:
+         name: bin/proxymap
+         link: /opt/sc/opt/postfix/2.7.1/lib/proxymap
+      qmgr:
+         name: bin/qmgr
+         link: /opt/sc/opt/postfix/2.7.1/lib/qmgr
+      qmqpd:
+         name: bin/qmqpd
+         link: /opt/sc/opt/postfix/2.7.1/lib/qmqpd
+      scache:
+         name: bin/scache
+         link: /opt/sc/opt/postfix/2.7.1/lib/scache
+      showq:
+         name: bin/showq
+         link: /opt/sc/opt/postfix/2.7.1/lib/showq
+      smtp:
+         name: bin/smtp
+         link: /opt/sc/opt/postfix/2.7.1/lib/smtp
+      smtpd:
+         name: bin/smtpd
+         link: /opt/sc/opt/postfix/2.7.1/lib/smtpd
+      spawn:
+         name: bin/spawn
+         link: /opt/sc/opt/postfix/2.7.1/lib/spawn
+      tlsmgr:
+         name: bin/tlsmgr
+         link: /opt/sc/opt/postfix/2.7.1/lib/tlsmgr
+      trivial-rewrite:
+         name: bin/trivial-rewrite
+         link: /opt/sc/opt/postfix/2.7.1/lib/trivial-rewrite
+      verify:
+         name: bin/verify
+         link: /opt/sc/opt/postfix/2.7.1/lib/verify
+      virtual:
+         name: bin/virtual
+         link: /opt/sc/opt/postfix/2.7.1/lib/virtual
+      postalias:
+         name: bin/postalias
+         link: /opt/sc/opt/postfix/2.7.1/sbin/postalias
+      postcat:
+         name: bin/postcat
+         link: /opt/sc/opt/postfix/2.7.1/sbin/postcat
+      postconf:
+         name: bin/postconf
+         link: /opt/sc/opt/postfix/2.7.1/sbin/postconf
+      postdrop:
+         name: bin/postdrop
+         link: /opt/sc/opt/postfix/2.7.1/sbin/postdrop
+      postkick:
+         name: bin/postkick
+         link: /opt/sc/opt/postfix/2.7.1/sbin/postkick
+      postlock:
+         name: bin/postlock
+         link: /opt/sc/opt/postfix/2.7.1/sbin/postlock
+      postlog:
+         name: bin/postlog
+         link: /opt/sc/opt/postfix/2.7.1/sbin/postlog
+      postmap:
+         name: bin/postmap
+         link: /opt/sc/opt/postfix/2.7.1/sbin/postmap
+      postqueue:
+         name: bin/postqueue
+         link: /opt/sc/opt/postfix/2.7.1/sbin/postqueue
+      postsuper:
+         name: bin/postsuper
+         link: /opt/sc/opt/postfix/2.7.1/sbin/postsuper
+      qmqp-sink:
+         name: bin/qmqp-sink
+         link: /opt/sc/opt/postfix/2.7.1/sbin/qmqp-sink
+      smtp-source:
+         name: bin/smtp-source
+         link: /opt/sc/opt/postfix/2.7.1/sbin/smtp-source
+      postfix-add-filter:
+         name: bin/postfix-add-filter
+         link: /opt/sc/opt/postfix/2.7.1/sbin/postfix-add-filter
+      postfix-add-policy:
+         name: bin/postfix-add-policy
+         link: /opt/sc/opt/postfix/2.7.1/sbin/postfix-add-policy
+      qshape:
+         name: bin/qshape
+         link: /opt/sc/opt/postfix/2.7.1/sbin/qshape
+      rmail:
+         name: bin/rmail
+         link: /opt/sc/opt/postfix/2.7.1/bin/rmail
+      newaliases:
+         name: bin/newaliases
+         link: /opt/sc/opt/postfix/2.7.1/bin/newaliases
+      mailq:
+         name: bin/mailq
+         link: /opt/sc/opt/postfix/2.7.1/bin/mailq
+      sendmail:
+         name: bin/sendmail
+         link: /opt/sc/opt/postfix/2.7.1/sbin/sendmail
+   Runtime:
+     pid: 
+         name: var/spool/pid/master.pid
