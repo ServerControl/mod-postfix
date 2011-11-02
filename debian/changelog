@@ -1,3 +1,7 @@
+servercontrol-mod-postfix (0.94) unstable; urgency=low
+  * Fix: postalias before start postfix
+ -- Daniel Baeurer <daniel.baeurer@web.de>  Wed, 02 Nov 2011 16:22:00 +0200
+
 servercontrol-mod-postfix (0.93) unstable; urgency=low
   * initial package
  -- Sascha Guenther <sg@gitco.de>  Wed, 22 Jul 2011 11:00:00 +0200

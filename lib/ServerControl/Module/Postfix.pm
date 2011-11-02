@@ -9,7 +9,7 @@ package ServerControl::Module::Postfix;
 use strict;
 use warnings;
 
-our $VERSION = '0.93';
+our $VERSION = '0.94';
 
 use ServerControl::Module;
 use ServerControl::Commons::Process;
