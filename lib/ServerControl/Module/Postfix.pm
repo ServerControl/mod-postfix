@@ -47,8 +47,13 @@ sub start {
    my $args        = ServerControl::Args->get;
    my $conf_dir    = ServerControl::FsLayout->get_directory("Configuration", "conf");
    my $exec_file   = ServerControl::FsLayout->get_file("Exec", "postfix");
+   my $post_alias  = ServerControl::FsLayout->get_file("Exec", "postalias");
 
-   spawn("$path/$exec_file -c $path/$conf_dir start"); 
+   if (-e "$path/$conf_dir/aliases") {
+      spawn("$path/$post_alias -c $path/$conf_dir $path/$conf_dir/aliases");
+   }
+
+   spawn("$path/$exec_file -c $path/$conf_dir start");
 }
 
 
