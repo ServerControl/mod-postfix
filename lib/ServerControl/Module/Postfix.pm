@@ -48,9 +48,14 @@ sub start {
    my $conf_dir    = ServerControl::FsLayout->get_directory("Configuration", "conf");
    my $exec_file   = ServerControl::FsLayout->get_file("Exec", "postfix");
    my $post_alias  = ServerControl::FsLayout->get_file("Exec", "postalias");
+   my $post_map    = ServerControl::FsLayout->get_file("Exec", "postmap");
 
    if (-e "$path/$conf_dir/aliases") {
       spawn("$path/$post_alias -c $path/$conf_dir $path/$conf_dir/aliases");
+   }
+
+   if (-e "$path/$conf_dir/transport") {
+      spawn("$path/$post_map $path/$conf_dir/transport"):
    }
 
    spawn("$path/$exec_file -c $path/$conf_dir start");
