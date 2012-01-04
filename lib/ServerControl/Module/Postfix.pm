@@ -9,7 +9,7 @@ package ServerControl::Module::Postfix;
 use strict;
 use warnings;
 
-our $VERSION = '0.95';
+our $VERSION = '0.96';
 
 use ServerControl::Module;
 use ServerControl::Commons::Process;
@@ -55,7 +55,7 @@ sub start {
    }
 
    if (-e "$path/$conf_dir/transport") {
-      spawn("$path/$post_map $path/$conf_dir/transport"):
+      spawn("$path/$post_map -c $path/$conf_dir $path/$conf_dir/transport");
    }
 
    spawn("$path/$exec_file -c $path/$conf_dir start");

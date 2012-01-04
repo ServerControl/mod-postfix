@@ -1,3 +1,7 @@
+servercontrol-mod-postfix (0.96) unstable; urgency=low
+  * Fix: syntax error in system call
+ -- Daniel Baeurer <daniel.baeurer@web.de>  Wed, 04 Jan 2012 18:11:00 +0200
+
 servercontrol-mod-postfix (0.95) unstable; urgency=low
   * Fix: postmap before start postfix
  -- Daniel Baeurer <daniel.baeurer@web.de>  Wed, 04 Jan 2012 17:49:00 +0200
